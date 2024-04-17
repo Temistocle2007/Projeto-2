@@ -1,35 +1,20 @@
-const hoursDisplay = document.getElementById('hours');
-const minutesDisplay = document.getElementById('minutes');
-const secondsDisplay = document.getElementById('seconds');
-const startButton = document.getElementById('start-btn');
+const dataFinal = new Date('2023-12-31 23:59:59').getTime();
 
-let totalSeconds = 0;
-let countdown;
 
-function formatTime(time) {
-  return time < 10 ? `0${time}` : time;
-}
+const contador = document.getElementById('contador');
+const interval = setInterval(() => {
+    const agora = new Date().getTime();
+    const diferenca = dataFinal - agora;
 
-function updateTimer() {
-  const hours = Math.floor(totalSeconds / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  const seconds = totalSeconds % 60;
+    const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
-  hoursDisplay.textContent = formatTime(hours);
-  minutesDisplay.textContent = formatTime(minutes);
-  secondsDisplay.textContent = formatTime(seconds);
+    contador.innerHTML = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
 
-  if (totalSeconds === 0) {
-    clearInterval(countdown);
-  } else {
-    totalSeconds--;
-  }
-}
-
-function startTimer() {
-  if (!countdown) {
-    countdown = setInterval(updateTimer, 1000);
-  }
-}
-
-startButton.addEventListener('click', startTimer);
+    if (diferenca <= 0) {
+        clearInterval(interval);
+        contador.innerHTML = "Contagem encerrada!";
+    }
+}, 1000);
