@@ -5,7 +5,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-background-color: linear-gradient(bottom, red,orange,yellow,green,blue,indigo,violet);
+background-image:(red,orange,yellow,green,blue,indigo,violet);
 }
 
 .countdown {
