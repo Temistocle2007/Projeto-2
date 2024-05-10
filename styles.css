@@ -5,7 +5,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-background-image:linear-gradient(to bottom (red,orange,yellow,green,blue,indigo,violet));
+  background-color: red;
 }
 
 .countdown {
@@ -40,5 +40,5 @@ h1 {
 
 .timer span:last-child {
   font-size: 1.2em;
-  color: Red;
+  color: Black;
 }
