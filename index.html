@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Global</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Incluindo a biblioteca Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Relatório Global de Pessoas</h1>
+        <div class="report-section">
+            <h2>Dados Gerais</h2>
+            <p id="total-users">Total de Usuários: </p>
+        </div>
+        <div class="chart-section">
+            <h2>Distribuição por Gênero</h2>
+            <canvas id="genderChart"></canvas>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
